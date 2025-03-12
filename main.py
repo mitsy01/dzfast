@@ -19,9 +19,9 @@ def add_user(name: str = Query()):
 @app.delete("/del_user/")
 def del_user(name: str = Query()):
     if name not in users:
-        return dict(msg="Немає такого імя")
+        return dict(msg="Немає такого ім'я")
     users.remove(name)
-    return dict(msg="")
+    return dict(msg="Ім'я видалено.")
 
 if __name__ == "__main__":
     uvicorn.run("main:app")
